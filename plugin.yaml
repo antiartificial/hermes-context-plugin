@@ -1,0 +1,16 @@
+name: contextdb-ab
+version: 0.1.0
+description: >
+  A/B testing plugin — runs sqlite-vec and contextdb retrievals in parallel
+  alongside Hermes's built-in FTS5 session search. Logs comparison metrics
+  for evaluating retrieval quality, token savings, and latency.
+author: antiartificial
+provides_tools:
+  - knowledge_recall
+  - knowledge_store
+  - ab_report
+provides_hooks:
+  - pre_llm_call
+  - post_tool_call
+  - on_session_start
+  - on_session_end
