@@ -170,7 +170,8 @@ def _on_pre_llm_call(session_id: str = "", user_message: str = "",
 
 def register(ctx):
     """Wire schemas to handlers and register hooks."""
-    # Tools
+    # Tools — knowledge_recall and knowledge_store support async dispatch
+    # for Ollama-backed providers where tool handlers run inside an event loop
     ctx.register_tool(
         name="knowledge_recall",
         toolset="contextdb",
